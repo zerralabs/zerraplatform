@@ -10,7 +10,7 @@ const SEO_CONFIG: Metadata = {
     "ZerraLabs - Building the future, one innovation at a time.",
   keywords:
     "zerralabs, innovation, technology, platform, solutions",
-  icons: "/static/favicon.ico",
+  icons: "/static/logo.png",
   openGraph: {
     type: "website",
     siteName: "ZerraLabs",
