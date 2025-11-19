@@ -1,0 +1,284 @@
+{
+  "meta": {
+    "source_images": [
+      "WhatsApp Image 2025-11-19 at 22.23.13_2c68ab2f.jpg",
+      "WhatsApp Image 2025-11-19 at 22.23.28_8804772f.jpg",
+      "WhatsApp Image 2025-11-19 at 22.24.24_1689077a.jpg"
+    ],
+    "notes": "Font name 'Space Grotesk' is visible in the source. Several color swatches are shown explicitly in the first image. Some numeric values (e.g., border radii, subtle paddings, shadow blur) are estimated from pixels and typical design choices — these are labeled as estimates where applicable."
+  },
+
+  "palette": {
+    "primary": "#1E50EF",
+    "accent": "#FA8269",
+    "neutrals": {
+      "black": "#000000",
+      "white": "#FFFFFF",
+      "lightGray": "#C5C6C9",
+      "midGray": "#686869",
+      "backgroundSurface": "#EDEDED" 
+    },
+    "summary": [
+      { "hex": "#000000", "role": "text / darkest neutral" },
+      { "hex": "#C5C6C9", "role": "muted neutral / secondary surfaces" },
+      { "hex": "#FA8269", "role": "warm accent / CTA secondary" },
+      { "hex": "#FFFFFF", "role": "background / text on dark" },
+      { "hex": "#1E50EF", "role": "primary CTA / brand blue" },
+      { "hex": "#686869", "role": "mid neutral / muted text" }
+    ],
+    "observations": {
+      "blue_notes": "Primary brand blue is vivid and saturated (used for CTAs and active states).",
+      "accent_notes": "Warm coral (#FA8269) used as a secondary accent for variety and to highlight items.",
+      "contrast": "Black on white and white on blue have strong contrast; watch contrast with midGrays for body text."
+    }
+  },
+
+  "typography": {
+    "fontFamily": "Space Grotesk",
+    "weights": {
+      "regular": 400,
+      "medium": 500,
+      "semibold": 600,
+      "bold": 700
+    },
+    "sizes": {
+      "heading": {
+        "value": 72,
+        "unit": "px",
+        "note": "explicitly present in second screenshot (labelled 'Heading 72 PX')"
+      },
+      "subheading": {
+        "value": 32,
+        "unit": "px",
+        "note": "explicitly present in second screenshot (labelled 'Sub-heading 32 PX')"
+      },
+      "body": {
+        "value": 24,
+        "unit": "px",
+        "note": "explicitly present in second screenshot (labelled 'Body 24 PX')"
+      },
+      "nav": {
+        "value": 16,
+        "unit": "px",
+        "note": "estimated (used for primary nav items and small labels)"
+      },
+      "small": {
+        "value": 12,
+        "unit": "px",
+        "note": "used for micro labels inside circular chips"
+      },
+      "lineHeight": {
+        "heading": 1.05,
+        "subheading": 1.2,
+        "body": 1.4
+      },
+      "letterSpacing": {
+        "default": "0px",
+        "trackingLarge": "0.2px"
+      }
+    },
+    "displayUsage": {
+      "hero_title": {
+        "font": "Space Grotesk",
+        "size": "72px",
+        "weight": 500,
+        "case": "title case",
+        "tracking": "normal"
+      },
+      "ui_labels": {
+        "font": "Space Grotesk",
+        "size": "12-14px",
+        "weight": 400,
+        "case": "uppercase occasionally for category tags (micro-pill)"
+      }
+    }
+  },
+
+  "layout_and_grid": {
+    "viewport_reference": {
+      "image_dimensions_px": [1280, 900],
+      "design_breakpoint": "desktop (≥1200px)"
+    },
+    "container_gutters": {
+      "horizontal_gutter": 40,
+      "vertical_spacing_unit": 24,
+      "note": "gutters are estimated — layout uses generous white space and large vertical rhythm"
+    },
+    "grid": {
+      "type": "invisible modular 8px baseline with wide columns",
+      "columns": 12,
+      "gutter_width": 24,
+      "baseline": 8
+    }
+  },
+
+  "shapes_and_components": {
+    "rounded_strip_card" : {
+      "description": "Large rounded rectangle across the width containing circular color swatches",
+      "background": "#EDEDED (estimate)",
+      "cornerRadius": 999,
+      "height_estimate": 120,
+      "padding": "32px",
+      "innerPadding": "20px"
+    },
+    "color_circle": {
+      "shape": "perfect circle",
+      "diameter_px_estimate": 100,
+      "border": {
+        "width_px": 0,
+        "note": "no distinct outer stroke on colored circles; they sit on the rounded strip"
+      },
+      "inner_micro-pill": {
+        "description": "small rounded capsule inside each circle that contains the hex label",
+        "background": "semi-contrasting (white on dark circles, light translucent on bright circles)",
+        "stroke": "0.75–1px (subtle) with contrast inversion where necessary",
+        "radius": 999,
+        "padding": "6px 18px",
+        "fontSize": 12
+      }
+    },
+    "hero_nav_pill": {
+      "description": "Rounded nav area in the hero (top bar) with a big pill search/CTA container",
+      "cornerRadius": 999,
+      "height_px_estimate": 56,
+      "shadow": {
+        "x": 0,
+        "y": 8,
+        "blur": 24,
+        "spread": 0,
+        "color": "rgba(20,20,20,0.06)",
+        "note": "soft large shadow for elevated nav pill"
+      }
+    },
+    "cta_button": {
+      "primary": {
+        "background": "#1E50EF",
+        "textColor": "#FFFFFF",
+        "borderRadius": 999,
+        "padding": "12px 28px",
+        "fontSize": 16,
+        "fontWeight": 600
+      },
+      "secondary": {
+        "background": "#FFFFFF",
+        "textColor": "#000000",
+        "border": "1px solid rgba(0,0,0,0.06)",
+        "borderRadius": 18,
+        "padding": "10px 22px",
+        "fontSize": 14
+      }
+    },
+    "card": {
+      "background": "#FFFFFF",
+      "borderRadius": 16,
+      "boxShadow": "0 8px 24px rgba(18,20,24,0.06)",
+      "padding": 24
+    }
+  },
+
+  "visual_details_and_microcopy": {
+    "inner_stroke_in_swatches": {
+      "description": "Each color circle contains a small inner capsule with the hex code. The capsule uses an inverted stroke or fill to remain legible (white capsule on dark circle; subtle dark stroke/capsule on light circles).",
+      "stroke_width_px_estimate": 1,
+      "capsule_cornerRadius": 999
+    },
+    "grid_background": {
+      "description": "Hero background contains a very light square grid (thin 1px lines) combined with a subtle top-to-bottom linear gradient.",
+      "grid_line_color": "rgba(30,30,30,0.03)",
+      "gradient": {
+        "from": "rgba(245,249,255,1)",
+        "to": "rgba(240,245,255,1)",
+        "direction": "top to bottom",
+        "note": "very subtle — mostly to add texture behind large hero text"
+      },
+      "tile_size_estimate": 56
+    },
+    "subtle_dividers": {
+      "color": "rgba(0,0,0,0.06)",
+      "weight_px": 1
+    },
+    "icons_and_avatar": {
+      "avatar_size": 36,
+      "avatar_shape": "circle",
+      "nav_icon_size": 18
+    },
+    "micro_ui": {
+      "tag_pill": {
+        "background": "rgba(30,80,239,0.06) (estimate for faint blue tags)",
+        "borderRadius": 999,
+        "padding": "4px 10px",
+        "fontSize": 12
+      }
+    }
+  },
+
+  "spacing_and_rhythm": {
+    "vertical_rhythm": {
+      "hero_title_to_subtitle": 24,
+      "section_margin_top": 64,
+      "section_gap": 48
+    },
+    "component_spacing": {
+      "card_inner_gap": 24,
+      "card_section_gap": 16,
+      "nav_item_gap": 20
+    }
+  },
+
+  "shadows_and_depth": {
+    "elevations": [
+      {
+        "name": "surface",
+        "shadow": "0 6px 18px rgba(12,16,20,0.04)"
+      },
+      {
+        "name": "card",
+        "shadow": "0 8px 24px rgba(18,20,24,0.06)"
+      },
+      {
+        "name": "nav_pill",
+        "shadow": "0 10px 30px rgba(16,20,24,0.08)"
+      }
+    ],
+    "usage": "Shadows are soft, blurred, and used to float important UI elements (nav pill, cards, CTAs)."
+  },
+
+  "accessibility_notes": {
+    "contrast": {
+      "black_on_white": "passes",
+      "white_on_primaryBlue": "passes",
+      "midGray_on_lightGray": "may fail - keep body text at >=16px and semi-bold to be accessible",
+      "capsule_text_small": "hex labels are small (12px) — ensure sufficient contrast or increase to 13-14px on production"
+    },
+    "tap_targets": "Ensure interactive pills and buttons have at least 44x44 px clickable area on mobile.",
+    "font_scaling": "Because headings are large, test at different viewport sizes; subheading should remain readable at 20–28px on tablet."
+  },
+
+  "developer_guidelines (copy-this-design)": {
+    "css_variables_sample": {
+      "--color-primary": "#1E50EF",
+      "--color-accent": "#FA8269",
+      "--color-black": "#000000",
+      "--color-mid-gray": "#686869",
+      "--color-surface": "#EDEDED",
+      "--font-sans": "'Space Grotesk', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial",
+      "--radius-pill": "9999px",
+      "--radius-card": "16px",
+      "--shadow-card": "0 8px 24px rgba(18,20,24,0.06)"
+    },
+    "example_css_snippets": {
+      "hero_title": "font-family: var(--font-sans); font-weight: 500; font-size: 72px; line-height: 1.05; color: var(--color-black);",
+      "rounded_strip": "background: var(--color-surface); border-radius: 9999px; padding: 32px; display:flex; gap:24px; align-items:center;",
+      "color_circle": "width:100px; height:100px; border-radius:50%; display:flex; align-items:center; justify-content:center;",
+      "capsule": "background: rgba(255,255,255,0.9); padding:6px 18px; border-radius:9999px; font-size:12px; box-shadow: 0 1px 0 rgba(0,0,0,0.06) inset;"
+    }
+  },
+
+  "estimated_values_flagged": {
+    "borderRadiusRoundedStrip": "estimate",
+    "color_surface_hex": "estimate",
+    "circle_diameter_px": "estimate",
+    "shadow_blurs": "estimate",
+    "grid_tile_size": "estimate"
+  }
+}

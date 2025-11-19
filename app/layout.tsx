@@ -1,11 +1,15 @@
 import { ReactNode } from 'react';
-import { Roboto } from "next/font/google";
+import { Space_Grotesk } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/components/theme-provider";
 import { ClerkProvider } from "@clerk/nextjs";
 import SEO_CONFIG from "@/lib/config/seo.config";
 
-const roboto = Roboto({ weight: ["400", "700"], subsets: ["latin"] });
+const spaceGrotesk = Space_Grotesk({ 
+  weight: ["400", "500", "600", "700"], 
+  subsets: ["latin"],
+  variable: "--font-space-grotesk"
+});
 
 export const metadata = {
   ...SEO_CONFIG,
@@ -24,13 +28,13 @@ export default function RootLayout({ children }: RootLayoutProps) {
           <meta name="viewport" content="width=device-width, initial-scale=1" />
           <meta name="robots" content="index, follow" />
         </head>
-        <body className={roboto.className} suppressHydrationWarning>
+        <body className={spaceGrotesk.className} suppressHydrationWarning>
           <ThemeProvider
             attribute="class"
             defaultTheme="light"
             enableSystem
             disableTransitionOnChange
-            storageKey="founderflow-theme"
+            storageKey="zerralabs-theme"
           >
             {children}
           </ThemeProvider>
