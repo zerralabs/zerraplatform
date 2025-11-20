@@ -14,7 +14,7 @@ export const Logo = ({ className }: { className?: string }) => {
   }, []);
 
   if (!mounted) {
-    return <div className="w-[120px] h-[45px] bg-gray-200 animate-pulse"></div>; // Skeleton loader until theme loads
+    return <div className={cn("bg-gray-200 animate-pulse", className)}></div>; // Skeleton loader until theme loads
   }
 
   const currentTheme = theme === "system" ? systemTheme : theme;

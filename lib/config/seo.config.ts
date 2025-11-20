@@ -4,10 +4,10 @@ import { SiteSettings } from "./settings";
 const SEO_CONFIG: Metadata = {
   title: {
     template: `%s | ${SiteSettings.name}`,
-    default: "ZerraLabs - Innovation Platform",
+    default: "ZerraLabs - AI Product Phtography",
   },
   description:
-    "ZerraLabs - Building the future, one innovation at a time.",
+    "ZerraLabs - Create studio quality products photos with simple photos using AI",
   keywords:
     "zerralabs, innovation, technology, platform, solutions",
   icons: "/static/logo.png",
@@ -16,24 +16,24 @@ const SEO_CONFIG: Metadata = {
     siteName: "ZerraLabs",
     locale: "en_US",
     url: "https://zerralabs.com",
-    title: "ZerraLabs - Innovation Platform",
+    title: "ZerraLabs",
     description:
-      "ZerraLabs - Building the future, one innovation at a time.",
+      "ZerraLabs - Create studio quality products photos with simple photos using AI",
     images: [
       {
         url: "/og-image.jpg",
         width: 1200,
         height: 630,
-        alt: "ZerraLabs - Innovation Platform",
+        alt: "ZerraLabs - Create studio quality products photos with simple photos using AI",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
     site: "@zerralabs",
-    title: "ZerraLabs - Innovation Platform",
+    title: "ZerraLabs",
     description:
-      "ZerraLabs - Building the future, one innovation at a time.",
+      "ZerraLabs - Create studio quality products photos with simple photos using AI",
     images: ["/og-image.jpg"],
   },
 };
