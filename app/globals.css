@@ -250,3 +250,31 @@ button {
 .animate-fade-in {
   animation: fade-in 0.6s ease-out;
 }
+
+/* Auto-scroll animation for logos */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-scroll {
+  animation: scroll 30s linear infinite;
+}
+
+/* Floating logos animation */
+@keyframes float-logos {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-float-logos {
+  animation: float-logos 35s linear infinite;
+}
