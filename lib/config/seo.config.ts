@@ -4,7 +4,7 @@ import { SiteSettings } from "./settings";
 const SEO_CONFIG: Metadata = {
   title: {
     template: `%s | ${SiteSettings.name}`,
-    default: "ZerraLabs",
+    default: "ZerraLabs - AI Product Phtography",
   },
   description:
     "ZerraLabs - Create studio quality products photos with simple photos using AI",
