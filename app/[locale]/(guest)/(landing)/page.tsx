@@ -70,10 +70,10 @@ export default function LandingPage() {
           <div className="max-w-7xl mx-auto text-center">
             {/* Hero Title - 56px (responsive: 48px mobile), weight 600, line-height 1.1 */}
             <h1 
-              className="font-semibold text-black mb-4 md:mb-6 text-4xl md:text-5xl lg:text-[56px]"
+              className="font-semibold text-black mb-4 md:mb-6 text-3xl md:text-4xl lg:text-5xl"
               style={{
-                lineHeight: '1.1',
-                letterSpacing: '-0.02em'
+                lineHeight: '1.2',
+                letterSpacing: '-0.01em'
               }}
             >
               Studio-quality product photos.
@@ -83,7 +83,7 @@ export default function LandingPage() {
             
             {/* Subheading - 20px (responsive: 18px mobile) */}
             <p 
-              className="text-[#686869] max-w-2xl mx-auto mb-8 md:mb-10 text-base md:text-lg lg:text-xl px-2"
+              className="text-[#686869] max-w-2xl mx-auto mb-8 md:mb-10 text-base md:text-lg px-2"
               style={{
                 lineHeight: '1.6'
               }}
@@ -131,8 +131,8 @@ export default function LandingPage() {
 
         <div className="relative z-10 max-w-7xl mx-auto px-4 md:px-10">
           {/* Section Header */}
-          <div className="text-center mb-16">
-            <p className="text-[#686869] text-lg max-w-2xl mx-auto leading-relaxed">
+          <div className="text-center mb-2">
+            <p className="text-[#686869] text-base max-w-2xl mx-auto leading-relaxed">
               Export AI-generated photos to major platforms and social media
             </p>
           </div>
@@ -164,10 +164,10 @@ export default function LandingPage() {
                     alt={`${platform.name} logo`}
                     className={`w-auto h-auto object-contain opacity-100 hover:opacity-100 transition-opacity duration-300 ${
                       platform.name === 'eBay'
-                        ? 'max-w-[70px] max-h-[28px] md:max-w-[80px] md:max-h-[32px]'
+                        ? 'max-w-[63px] max-h-[25px] md:max-w-[72px] md:max-h-[29px]'
                         : platform.name === 'Instagram'
-                        ? 'max-w-[110px] max-h-[44px] md:max-w-[130px] md:max-h-[52px]'
-                        : 'max-w-[100px] max-h-[40px] md:max-w-[120px] md:max-h-[48px]'
+                        ? 'max-w-[99px] max-h-[40px] md:max-w-[117px] md:max-h-[47px]'
+                        : 'max-w-[90px] max-h-[36px] md:max-w-[108px] md:max-h-[43px]'
                     } ${
                       platform.name === 'Amazon' ? 'mt-2' : ''
                     }`}
@@ -203,10 +203,10 @@ export default function LandingPage() {
                     alt={`${platform.name} logo`}
                     className={`w-auto h-auto object-contain opacity-100 hover:opacity-100 transition-opacity duration-300 ${
                       platform.name === 'eBay'
-                        ? 'max-w-[70px] max-h-[28px] md:max-w-[80px] md:max-h-[32px]'
+                        ? 'max-w-[63px] max-h-[25px] md:max-w-[72px] md:max-h-[29px]'
                         : platform.name === 'Instagram'
-                        ? 'max-w-[110px] max-h-[44px] md:max-w-[130px] md:max-h-[52px]'
-                        : 'max-w-[100px] max-h-[40px] md:max-w-[120px] md:max-h-[48px]'
+                        ? 'max-w-[99px] max-h-[40px] md:max-w-[117px] md:max-h-[47px]'
+                        : 'max-w-[90px] max-h-[36px] md:max-w-[108px] md:max-h-[43px]'
                     } ${
                       platform.name === 'Amazon' ? 'mt-2' : ''
                     }`}
@@ -225,23 +225,39 @@ export default function LandingPage() {
         </div>
       </section>
 
-      {/* Next Section Placeholder */}
+      {/* Features Section */}
       <section className="py-20 bg-white">
-        <div className="px-2 md:px-4">
-          {/* Image Grid */}
-          <div className="grid grid-cols-3 md:grid-cols-3 lg:grid-cols-6 gap-2 md:gap-4">
-            {Array.from({ length: 6 }, (_, i) => (
-              <div
-                key={i}
-                className="aspect-[3/4] bg-gray-200 rounded-lg overflow-hidden shadow-sm"
-              >
-                <img
-                  src={`/static/carousel/image${i + 1}.jpg`}
-                  alt={`Image ${i + 1}`}
-                  className="w-full h-full object-cover"
-                />
+        <div className="max-w-7xl mx-auto px-4 md:px-10">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
+            {/* Left Section: Pill, Separator, Title and Description */}
+            <div>
+              {/* Section Pill and Separator - only in left column */}
+              <div className="flex items-center mb-8">
+                <div className="inline-flex items-center px-3 py-1 rounded-full bg-transparent border border-[#686869] text-sm font-medium text-[#686869] shadow-sm mr-4 uppercase">
+                  Background Removal
+                </div>
+                <hr className="flex-1 border-gray-200 opacity-50" />
               </div>
-            ))}
+              
+              <h2 className="text-2xl md:text-3xl font-bold text-black mb-4">
+                Remove background seamlessly
+              </h2>
+              <p className="text-gray-600 text-base leading-relaxed">
+                Upload your product image and our AI will instantly remove the background with precise accuracy. It's designed to handle a wide variety of products, delivering clean, professional results every time. In just seconds, you'll have ready-to-use images without any manual editing.
+              </p>
+            </div>
+            {/* Right Section: Visual Illustration */}
+            <div className="relative">
+              <div className="bg-white/80 backdrop-blur-sm rounded-lg shadow-lg p-6">
+                <div className="aspect-[4/3] bg-gray-100 rounded-lg overflow-hidden">
+                  <img
+                    src="/static/images/background-remove.jpg"
+                    alt="Background Removal Demo"
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -272,10 +288,10 @@ export default function LandingPage() {
         <div className="relative z-10 max-w-4xl mx-auto px-4 md:px-10 text-center">
           {/* Heading */}
           <h2
-            className="font-semibold text-black mb-6 text-4xl md:text-5xl lg:text-[48px]"
+            className="font-semibold text-black mb-6 text-3xl md:text-4xl"
             style={{
-              lineHeight: '1.1',
-              letterSpacing: '-0.02em'
+              lineHeight: '1.2',
+              letterSpacing: '-0.01em'
             }}
           >
             Join the waitlist for
@@ -287,7 +303,7 @@ export default function LandingPage() {
 
           {/* Subheading */}
           <p
-            className="text-[#686869] max-w-2xl mx-auto mb-10 text-lg md:text-xl"
+            className="text-[#686869] max-w-2xl mx-auto mb-10 text-base md:text-lg"
             style={{
               lineHeight: '1.6'
             }}
