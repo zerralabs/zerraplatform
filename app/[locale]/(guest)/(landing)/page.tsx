@@ -67,8 +67,8 @@ export default function LandingPage() {
               </button>
             </div>
 
-            {/* CTA Button and Mobile Hamburger */}
-            <div className="flex items-center space-x-4">
+            {/* CTA Button */}
+            <div className="flex items-center">
               {/* CTA Button - Primary style from design */}
               <Button
                 onClick={() => {
@@ -79,17 +79,6 @@ export default function LandingPage() {
               >
                 Join Waitlist
               </Button>
-
-              {/* Mobile Hamburger Menu */}
-              <button
-                className="md:hidden p-2 rounded-md hover:bg-gray-100 transition-colors"
-                onClick={() => setIsMenuOpen(!isMenuOpen)}
-                aria-label="Toggle menu"
-              >
-                <svg className="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-                </svg>
-              </button>
             </div>
           </div>
         </div>
