@@ -481,7 +481,7 @@ export default function LandingPage() {
             style={{
               transitionDelay: '400ms'
             }}>
-              <div className="aspect-square bg-gradient-to-br from-blue-50 via-white to-purple-50 rounded-2xl overflow-hidden flex items-center justify-center p-8 relative w-[90%] mx-auto">
+              <div className="min-h-[400px] md:aspect-square bg-gradient-to-br from-blue-50 via-white to-purple-50 rounded-2xl overflow-hidden flex items-center justify-center p-6 md:p-8 relative w-[90%] mx-auto">
                 {/* Background circles */}
                 <div className="absolute top-10 right-10 w-32 h-32 bg-blue-100/50 rounded-full blur-2xl"></div>
                 <div className="absolute bottom-10 left-10 w-40 h-40 bg-purple-100/50 rounded-full blur-2xl"></div>
