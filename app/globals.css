@@ -276,5 +276,12 @@ button {
 }
 
 .animate-float-logos {
-  animation: float-logos 35s linear infinite;
+  animation: float-logos 20s linear infinite;
+}
+
+/* Faster animation on mobile */
+@media (max-width: 768px) {
+  .animate-float-logos {
+    animation: float-logos 15s linear infinite;
+  }
 }

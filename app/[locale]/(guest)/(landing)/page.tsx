@@ -8,6 +8,7 @@ import { useIntersectionObserver } from "@/hooks/use-intersection-observer";
 
 export default function LandingPage() {
   const [email, setEmail] = useState("");
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   
   // Intersection observers for each section
   const heroSection = useIntersectionObserver();
@@ -44,7 +45,7 @@ export default function LandingPage() {
               <span className="text-base md:text-lg font-semibold text-black -ml-1">ZerraLabs</span>
             </div>
 
-            {/* Navigation Links */}
+            {/* Desktop Navigation Links */}
             <div className="hidden md:flex items-center space-x-8">
               <button
                 onClick={() => {
@@ -66,8 +67,9 @@ export default function LandingPage() {
               </button>
             </div>
 
-            {/* CTA Button - Primary style from design */}
-            <div>
+            {/* CTA Button and Mobile Hamburger */}
+            <div className="flex items-center space-x-4">
+              {/* CTA Button - Primary style from design */}
               <Button
                 onClick={() => {
                   const waitlistElement = document.querySelector('[data-section="waitlist"]');
@@ -77,11 +79,50 @@ export default function LandingPage() {
               >
                 Join Waitlist
               </Button>
+
+              {/* Mobile Hamburger Menu */}
+              <button
+                className="md:hidden p-2 rounded-md hover:bg-gray-100 transition-colors"
+                onClick={() => setIsMenuOpen(!isMenuOpen)}
+                aria-label="Toggle menu"
+              >
+                <svg className="w-6 h-6 text-gray-700" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+              </button>
             </div>
           </div>
         </div>
       </nav>
-      </div>
+
+      {/* Mobile Menu Overlay */}
+      {isMenuOpen && (
+        <div className="md:hidden absolute top-full left-0 right-0 bg-white/95 backdrop-blur-md border-t border-gray-200 shadow-lg z-40">
+          <div className="px-4 py-4 space-y-2">
+            <button
+              onClick={() => {
+                setIsMenuOpen(false);
+                const heroElement = document.querySelector('[data-section="hero"]');
+                heroElement?.scrollIntoView({ behavior: 'smooth' });
+              }}
+              className="block w-full text-left py-3 px-2 text-sm font-semibold text-gray-700 hover:text-[#1E50EF] hover:bg-gray-50 rounded-md transition-colors"
+            >
+              Home
+            </button>
+            <button
+              onClick={() => {
+                setIsMenuOpen(false);
+                const featuresElement = document.querySelector('[data-section="features"]');
+                featuresElement?.scrollIntoView({ behavior: 'smooth' });
+              }}
+              className="block w-full text-left py-3 px-2 text-sm font-semibold text-gray-700 hover:text-[#1E50EF] hover:bg-gray-50 rounded-md transition-colors"
+            >
+              Features
+            </button>
+          </div>
+        </div>
+      )}
+    </div>
 
       {/* Hero Section Wrapper */}
       <div className="relative overflow-hidden -mt-20 md:-mt-24">
@@ -111,7 +152,7 @@ export default function LandingPage() {
         </div>
 
         {/* Hero Section - Following design typography specs */}
-        <section ref={heroSection.ref} data-section="hero" className="relative z-10 pt-22 md:pt-44 pb-18 md:pb-22 px-4 md:px-10">
+        <section ref={heroSection.ref} data-section="hero" className="relative z-10 pt-36 md:pt-44 pb-16 md:pb-22 px-4 md:px-10">
           <div className="max-w-7xl mx-auto text-center">
             {/* Hero Title - 56px (responsive: 48px mobile), weight 600, line-height 1.1 */}
             <h1 
@@ -172,7 +213,7 @@ export default function LandingPage() {
       </div>
 
       {/* Upload Platforms Section */}
-      <section ref={platformSection.ref} className="relative py-10 overflow-hidden bg-gradient-to-br from-white via-gray-50/30 to-white">
+      <section ref={platformSection.ref} className="relative py-0 md:py-10 overflow-hidden bg-gradient-to-br from-white via-gray-50/30 to-white">
         {/* Background Pattern */}
         <div
           className="absolute inset-0 opacity-[0.02]"
@@ -292,7 +333,7 @@ export default function LandingPage() {
       </section>
 
       {/* Features Section */}
-      <section ref={feature1Section.ref} data-section="features" className="py-20 bg-white">
+      <section ref={feature1Section.ref} data-section="features" className="py-10 md:py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 md:px-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
             {/* Left Section: Pill, Separator, Title and Description */}
@@ -347,11 +388,11 @@ export default function LandingPage() {
       </section>
 
       {/* Second Feature Section - Inverted */}
-      <section ref={feature2Section.ref} className="py-20 bg-white">
+      <section ref={feature2Section.ref} className="py-10 md:py-20 bg-white">
         <div className="max-w-7xl mx-auto px-4 md:px-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
             {/* Left Section: Visual Illustration */}
-            <div className={`relative transition-opacity duration-[1200ms] ease-in-out ${
+            <div className={`relative transition-opacity duration-[1200ms] ease-in-out order-2 lg:order-1 ${
               feature2Section.isIntersecting ? 'opacity-100' : 'opacity-0'
             }`}
             style={{
@@ -373,7 +414,7 @@ export default function LandingPage() {
               </div>
             </div>
             {/* Right Section: Pill, Separator, Title and Description */}
-            <div>
+            <div className="order-1 lg:order-2">
               {/* Section Pill and Separator - only in right column */}
               <div className={`flex items-center mb-8 transition-opacity duration-[1200ms] ease-in-out ${
                 feature2Section.isIntersecting ? 'opacity-100' : 'opacity-0'
@@ -409,7 +450,7 @@ export default function LandingPage() {
       </section>
 
       {/* Third Feature Section */}
-      <section ref={feature3Section.ref} className="py-20 bg-white pb-8">
+      <section ref={feature3Section.ref} className="py-10 md:py-20 bg-white pb-4 md:pb-8">
         <div className="max-w-7xl mx-auto px-4 md:px-10">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-start">
             {/* Left Section: Pill, Separator, Title and Description */}
